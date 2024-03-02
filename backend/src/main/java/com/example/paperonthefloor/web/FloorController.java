@@ -20,7 +20,7 @@ public class FloorController {
     private final PaperService paperService;
 
     @GetMapping("/home")
-    public List<Paper> showFloor (){
+    public Paper showFloor (){
         LocalDate currentDate = LocalDate.now();
         int year = currentDate.getYear();
         int month = currentDate.getMonthValue();
