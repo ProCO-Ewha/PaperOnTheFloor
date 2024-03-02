@@ -1,0 +1,16 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #f2f0e9;
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+}
+
+#logo-text {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 80px;
+  color: #000000;
+  margin-top: 100px;
+  margin-left: 5px; 
+  margin:90px;
+}

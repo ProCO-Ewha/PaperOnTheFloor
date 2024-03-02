@@ -1,0 +1,160 @@
+.button-adddiary {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  border: none;
+  text-align: center;
+  line-height: 30px;
+  transform: translateX(-50%);
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #f2f0e9;
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+#logo-text {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 60px;
+  margin-bottom: 20px; /* 필요에 따라 조정 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* 텍스트를 중앙 정렬합니다 */
+}
+
+@media only screen and (max-width: 600px) {
+  #logo-text {
+      font-size: 30px; /* 핸드폰 화면에 맞게 폰트 크기를 줄임 */
+  }
+}
+
+.memo-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 화면의 높이를 가득 채우도록 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*.memo-form input[type="text"],
+.memo-form textarea,
+.memo-form button {
+  margin-top: -20px; /* 요소들을 위로 이동시킵니다. 필요에 따라 조절하세요. */
+
+
+.memo-form textarea {
+  width: 200px; /* 입력 창의 너비를 조절합니다. */
+  height: 70px; /* 입력 창의 높이를 조절합니다. */
+  border: none; /* 입력창 테두리 제거 */
+  background: transparent; /* 입력창 배경 투명화 */
+  outline: none; /* 포커스 시 외곽선 제거 */
+}
+
+
+.memo-form {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px; /* 그리드 크기 조절 */
+  padding: 20px; /* 입력창 내부 여백 설정 */
+  width: 500px; /* 입력 폼의 너비 설정 */
+  height: 80px; /* 입력 폼의 높이 설정 */
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.memo-form input {
+  border: none; /* 입력창 테두리 제거 */
+  background: transparent; /* 입력창 배경 투명화 */
+  outline: none; /* 포커스 시 외곽선 제거 */
+  margin-top: -1000px;
+}
+
+.memo-form input[name="content"]{
+  border: none; /* 입력창 테두리 제거 */
+  background: transparent; /* 입력창 배경 투명화 */
+  outline: none; /* 포커스 시 외곽선 제거 */
+  width: 200px; /* 내용 입력 창의 너비를 조절합니다. */
+  height: 100px; 
+}
+
+
+.memo-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px; 
+}
+
+.memo-form button:hover {
+  background-color: #45a049;
+}
+
+
+.App {
+  position: relative; /* 추가 */
+  height: 100vh; /* 화면 전체를 차지하도록 설정 */
+  display: flex; /* 요소들을 수직 가운데 정렬하기 위해 */
+  flex-direction: column; /* 요소들을 수직으로 정렬 */
+  justify-content: center; /* 요소들을 수직으로 가운데 정렬 */
+}
+
+
+/*.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
