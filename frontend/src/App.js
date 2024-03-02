@@ -6,17 +6,21 @@ import './App.css';
 function App() {
   const [memos, setMemos] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const [newMemo, setNewMemo] = useState({name: '', content: '',});
+  const [newMemo, setNewMemo] = useState({author: '', text: '',});
 
+  
   useEffect(() => {
     axios.get('http://localhost:8080/home')
       .then(response => {
-        setMemos(response.data);
+        // 서버로부터 받은 JSON 데이터를 배열로 변환하여 설정
+        setMemos(Array.isArray(response.data) ? response.data : [response.data]);
       })
       .catch(error => {
         console.error('There was an error!', error);
       });
-  }, []);
+}, []);
+
+  
 
   const handleAddClick = () => {
     setShowForm(!showForm);
@@ -26,17 +30,11 @@ function App() {
     setNewMemo({...newMemo, [e.target.name]: e.target.value});
   };
 
-  /*const handleSubmit = (e) => {
-    e.preventDefault();
-    const nextId = memos[memos.length - 1].id + 1;
-    setShowForm(false);
-  };*/
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:8080/papers/new', newMemo)
       .then(response => {
-        setNewMemo({name: '', content: ''});
+        setNewMemo({author: '', text: ''});
         setShowForm(false);
       })
       .catch(error => {
@@ -55,10 +53,11 @@ function App() {
           <button className="button-adddiary" onClick={handleAddClick}>+</button>
           {showForm && (
             <form className="memo-form" onSubmit={handleSubmit}>
-              <textarea type="text" name="name" placeholder="Name" onChange={handleInputChange} />
-              <textarea type="text" name="content" placeholder="Write here" onChange={handleInputChange} />
-              <button type="submit">Submit</button>
-            </form>
+            <textarea type="text" name="author" placeholder="Name" onChange={handleInputChange} />
+            <textarea type="text" name="text" placeholder="Write here" onChange={handleInputChange} />
+            <button type="submit">Submit</button>
+          </form>
+          
           )}
         </div>
       );

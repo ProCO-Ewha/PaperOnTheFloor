@@ -23,6 +23,12 @@
   margin-top: -50px;
 }
 
+@media only screen and (max-width: 600px) {
+  .memo {
+    margin-top: -150px; /* 화면이 작은 경우 더 위로 이동 */
+  }
+}
+
 .memo:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
