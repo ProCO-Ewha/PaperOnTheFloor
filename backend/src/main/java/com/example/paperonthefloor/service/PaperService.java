@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 @Service
 @Transactional(readOnly = true)
@@ -29,25 +30,30 @@ public class PaperService {
         return paperRepository.findOne(paperId);
     }
     // 일별 랜덤 조회
-    public List<Paper> getPapersByDate(int year, int month, int day) {
+    public Paper getPapersByDate(int year, int month, int day) {
         List<Paper> papers = paperRepository.findDiariesByIdAndDate(year, month, day);
-        List<Paper> papersOnTheFloor = new ArrayList<>();
-
-        if (papers.size() > 10) {
-            List<Integer> indexes = new ArrayList<>();
-            for (int i = 0; i < papers.size(); i++) {
-                indexes.add(i);
-            }
-            Collections.shuffle(indexes);
-            for (int i = 0; i < 10; i++) {
-                papersOnTheFloor.add(papers.get(indexes.get(i)));
-            }
-        } else {
-            papersOnTheFloor.addAll(papers);
+        if (papers == null || papers.isEmpty()) {
+            return null;
         }
+        Random random = new Random();
+        int randomIndex = random.nextInt(papers.size());
+        return papers.get(randomIndex);
+//        List<Paper> papersOnTheFloor = new ArrayList<>();
+//
+//        if (papers.size() > 10) {
+//            List<Integer> indexes = new ArrayList<>();
+//            for (int i = 0; i < papers.size(); i++) {
+//                indexes.add(i);
+//            }
+//            Collections.shuffle(indexes);
+//            for (int i = 0; i < 10; i++) {
+//                papersOnTheFloor.add(papers.get(indexes.get(i)));
+//            }
+//        } else {
+//            papersOnTheFloor.addAll(papers);
+//        }
+//
+//        return papersOnTheFloor;
 
-        return papersOnTheFloor;
     }
-
-
 }
