@@ -50,7 +50,9 @@ function App() {
               <Memo key={memo.id} memo={memo} />
             ))}
           </div>
-          <button className="button-adddiary" onClick={handleAddClick}>+</button>
+          <div class="button-container">
+          <img src="button.png" alt="버튼 이미지" class="button-adddiary" onClick={handleAddClick}/>
+          </div>
           {showForm && (
             <form className="memo-form" onSubmit={handleSubmit}>
             <textarea type="text" name="author" placeholder="Name" onChange={handleInputChange} />

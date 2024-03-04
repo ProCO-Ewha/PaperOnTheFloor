@@ -1,4 +1,4 @@
-.button-adddiary {
+/*button-adddiary {
   position: absolute;
   left: 50%;
   bottom: 70px;
@@ -12,7 +12,29 @@
   text-align: center;
   line-height: 30px;
   transform: translateX(-50%);
+}*/
+
+.button-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 높이 조정 가능 */
 }
+
+.button-adddiary {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 50%; /* 원 모양을 유지하기 위해 50%로 설정 */
+  background-color: black;
+  color: white;
+  border: none;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 220px;
+}
+
 
 body {
   font-family: 'Ubuntu', sans-serif;
@@ -21,6 +43,7 @@ body {
   text-align: center;
   padding: 20px;
   position: relative;
+  overflow: hidden;
 }
 
 #logo-text {
