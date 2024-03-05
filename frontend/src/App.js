@@ -10,7 +10,7 @@ function App() {
 
   
   useEffect(() => {
-    axios.get('/home')
+    axios.get('http://paperonthefloor.site:8080/home')
       .then(response => {
         // 서버로부터 받은 JSON 데이터를 배열로 변환하여 설정
         setMemos(Array.isArray(response.data) ? response.data : [response.data]);
@@ -32,7 +32,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/papers/new', newMemo)
+    axios.post('http://paperonthefloor.site:8080/papers/new', newMemo)
       .then(response => {
         setNewMemo({author: '', text: ''});
         setShowForm(false);
